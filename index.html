@@ -9,7 +9,7 @@
 <meta name="author" content="Angel Alcala Ruiz">
 <meta name="dcterms.date" content="2023-11-20">
 
-<title>Problem 3: Largest prime factors</title>
+<title>Project Euler</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -81,7 +81,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Problem 3: Largest prime factors</h1>
+<div class="quarto-title-block"><div><h1 class="title">Project Euler</h1><button type="button" class="btn code-tools-button dropdown-toggle" id="quarto-code-tools-menu" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi"></i> Code</button><ul class="dropdown-menu dropdown-menu-end" aria-labelelledby="quarto-code-tools-menu"><li><a id="quarto-show-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Show All Code</a></li><li><a id="quarto-hide-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Hide All Code</a></li></ul></div></div>
 </div>
 
 
@@ -108,10 +108,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </header>
 
+<section id="problem-3-largest-prime-factors" class="level2">
+<h2 class="anchored" data-anchor-id="problem-3-largest-prime-factors">Problem 3: Largest prime factors</h2>
 <p>The prime factors of 13195 are 5, 7, 13, and 29.</p>
 <p>What is the largest prime factor of the number 600851475143.</p>
 <p>Let’s solve using <strong>Julia</strong></p>
 <div class="cell" data-execution_count="1">
+<details open="">
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">LargestPrimeFactor</span>(n)</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    </span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">function</span> <span class="fu">Factors</span>(n)</span>
@@ -165,13 +169,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a>primes <span class="op">=</span> <span class="fu">Primes</span>(factors)</span>
 <span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a><span class="cf">return</span> primes[<span class="kw">end</span>], primes, factors</span>
 <span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a><span class="kw">end</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output cell-output-display">
 <pre><code>LargestPrimeFactor (generic function with 1 method)</code></pre>
 </div>
 </div>
 <p>Let’s now test out our code. Let’s first test our code with 10</p>
 <div class="cell" data-execution_count="2">
+<details open="">
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">LargestPrimeFactor</span>(<span class="fl">10</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output cell-output-display">
 <pre><code>(5, Any[5], Any[1, 2, 5, 10])</code></pre>
 </div>
@@ -179,7 +187,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Therefore we can see that the factors of 10 are 1, 2, 5, and 10. Of these factors 2 and 5 are prime, and 5 is the largest prime factor.</p>
 <p>Let’s now test our code with 37 which is a prime number</p>
 <div class="cell" data-execution_count="3">
+<details open="">
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">LargestPrimeFactor</span>(<span class="fl">37</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output cell-output-display">
 <pre><code>(37, Any[37], Any[1, 37])</code></pre>
 </div>
@@ -187,7 +198,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Therefore we have that 37 is the largest prime factor, and all of the factors of 37 are 1 and 37.</p>
 <p>Now let’s test our code with 13195</p>
 <div class="cell" data-execution_count="4">
+<details open="">
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">LargestPrimeFactor</span>(<span class="fl">13195</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output cell-output-display">
 <pre><code>(29, Any[5, 7, 13, 29], Any[1, 5, 7, 13, 29, 35, 65, 91, 145, 203, 377, 455, 1015, 1885, 2639, 13195])</code></pre>
 </div>
@@ -195,12 +209,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Therefore we get that the largest prime factor of 13195 is 29.</p>
 <p>Now let’s find the largest prime factor of 600851475143</p>
 <div class="cell" data-execution_count="5">
+<details open="">
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">LargestPrimeFactor</span>(<span class="fl">600851475</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output cell-output-display">
 <pre><code>(54499, Any[3, 5, 7, 54499], Any[1, 3, 5, 7, 9, 15, 21, 25, 35, 45  …  13352255, 17167185, 24034059, 28611975, 40056765, 66761275, 85835925, 120170295, 200283825, 600851475])</code></pre>
 </div>
 </div>
 <p>Therefore we get that the largest prime factor of 600851475143 is 54499</p>
+</section>
 
 </main>
 <!-- /main column -->
@@ -283,6 +301,57 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
+  const viewSource = window.document.getElementById('quarto-view-source') ||
+                     window.document.getElementById('quarto-code-tools-source');
+  if (viewSource) {
+    const sourceUrl = viewSource.getAttribute("data-quarto-source-url");
+    viewSource.addEventListener("click", function(e) {
+      if (sourceUrl) {
+        // rstudio viewer pane
+        if (/\bcapabilities=\b/.test(window.location)) {
+          window.open(sourceUrl);
+        } else {
+          window.location.href = sourceUrl;
+        }
+      } else {
+        const modal = new bootstrap.Modal(document.getElementById('quarto-embedded-source-code-modal'));
+        modal.show();
+      }
+      return false;
+    });
+  }
+  function toggleCodeHandler(show) {
+    return function(e) {
+      const detailsSrc = window.document.querySelectorAll(".cell > details > .sourceCode");
+      for (let i=0; i<detailsSrc.length; i++) {
+        const details = detailsSrc[i].parentElement;
+        if (show) {
+          details.open = true;
+        } else {
+          details.removeAttribute("open");
+        }
+      }
+      const cellCodeDivs = window.document.querySelectorAll(".cell > .sourceCode");
+      const fromCls = show ? "hidden" : "unhidden";
+      const toCls = show ? "unhidden" : "hidden";
+      for (let i=0; i<cellCodeDivs.length; i++) {
+        const codeDiv = cellCodeDivs[i];
+        if (codeDiv.classList.contains(fromCls)) {
+          codeDiv.classList.remove(fromCls);
+          codeDiv.classList.add(toCls);
+        } 
+      }
+      return false;
+    }
+  }
+  const hideAllCode = window.document.getElementById("quarto-hide-all-code");
+  if (hideAllCode) {
+    hideAllCode.addEventListener("click", toggleCodeHandler(false));
+  }
+  const showAllCode = window.document.getElementById("quarto-show-all-code");
+  if (showAllCode) {
+    showAllCode.addEventListener("click", toggleCodeHandler(true));
+  }
   function tippyHover(el, contentFn) {
     const config = {
       allowHTML: true,
